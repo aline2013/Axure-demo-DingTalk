@@ -465,6 +465,9 @@
   top:30px;
   width:292px;
   height:112px;
+  font-family:'PingFangSC-Regular', 'PingFang SC';
+  font-weight:400;
+  font-style:normal;
 }
 #u14_text {
   border-width:0px;
