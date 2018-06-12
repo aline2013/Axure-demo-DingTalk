@@ -69,7 +69,7 @@
         // isolate scope
         (function() {
             setUpController();
-
+            
             var configuration = $axure.document.configuration;
             var _settings = {};
             _settings.projectId = configuration.prototypeId;
@@ -86,7 +86,7 @@
 
             $(window).bind('load', function() {
                 if(CHROME_5_LOCAL && !$('body').attr('pluginDetected')) {
-                    // window.location = 'resources/chrome/chrome.html';
+                    window.location = 'resources/chrome/chrome.html';
                 }
             });
 
@@ -117,7 +117,7 @@
                 if($axure.player.settings.startCollapsed) $('#outerContainer').splitter({ sizeLeft: 0 });
                 else $('#outerContainer').splitter({ sizeLeft: lastLeftPanelWidth });
                 $('#leftPanel').width(lastLeftPanelWidth);
-
+                
                 $(window).resize(function() { resizeContent(); });
 
                 $('#maximizePanelContainer').hide();
@@ -126,7 +126,7 @@
 
                 $(window).resize();
                 resizeContent();
-
+                
                 $axure.player.collapseToBar();
 
                 if($axure.player.settings.startCollapsed) {
@@ -197,7 +197,7 @@
                         $axure.player.resizeContent();
                     };
                     image.src = $axure.document.configuration.logoImagePath;
-
+                
                     $('#interfaceControlFrameLogoImageContainer').html('<img id="logoImage" src="" />');
                     $('#logoImage').attr('src', $axure.document.configuration.logoImagePath).load(function() { resizeContent(); });
                 } else $('#interfaceControlFrameLogoImageContainer').hide();
@@ -266,7 +266,7 @@
             else if(message == 'getCollapseFrameOnLoad' && $axure.player.settings.startCollapsed && !MOBILE_DEVICE) $axure.messageCenter.postMessage('collapseFrameOnLoad');
         }
 
-
+        
         function getInitialUrl() {
             var pageName = getHashStringVar("p");
             if(pageName.length > 0) return pageName + ".html";
@@ -370,7 +370,7 @@
             if(qstring.length < 2) return "";
             return GetParameter(qstring, query);
         }
-
+        
         function GetParameter(qstring, query) {
             var prms = qstring[1].split("&");
             var frmelements = new Array();
@@ -391,7 +391,7 @@
             }
             return querystr;
         }
-
+        
         function getHashStringVar(query) {
             var qstring = self.location.href.split("#");
             if(qstring.length < 2) return "";
@@ -469,7 +469,7 @@
             }
         }
     --></script>
-
+    
     <link type="text/css" rel="Stylesheet" href="plugins/sitemap/styles/sitemap.css" />
     <link type="text/css" rel="Stylesheet" href="plugins/page_notes/styles/page_notes.css" />
     <link type="text/css" rel="Stylesheet" href="plugins/debug/styles/debug.css" />
@@ -478,7 +478,7 @@
 
     <!--<link type="text/css" rel="Stylesheet" href="plugins/recordplay/styles/recordplay.css" />
     <script type="text/javascript" src="plugins/recordplay/recordplay.js"></script>-->
-
+    
 
 </head>
 <body scroll="no" class="hashover">
